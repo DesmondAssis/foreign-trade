@@ -1,0 +1,46 @@
+spring:
+
+ # datasource
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: ${url}
+    username: ${uname}
+    password: ${pwd}
+    
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    cms.filters: stat,wall,log4j
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+
+  #  freemarker
+  freemarker:
+    allow-request-override: false
+    cache: true
+    check-template-location: true
+    charset: utf-8
+    content-type: text/html
+    template-loader-path: ["classpath:/templates/"]
+base:
+  jdbc-properties-location: /Users/presleyli/java/profile/foreign_trade/jdbc.properties
+# email
+mail:
+  host: smtp.exmail.qq.com
+  port: 465
+  default-encoding: UTF-8
+  username: xxx
+  password: xxx
+  sender: xxx
+      
+    
+    
