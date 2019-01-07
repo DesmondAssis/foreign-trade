@@ -1,0 +1,25 @@
+.info {
+	PADDING-BOTTOM: 10px;
+	PADDING-LEFT: 0px;
+	PADDING-RIGHT: 0px;
+	BACKGROUND: url(img3-5_3.png) repeat-y;
+	PADDING-TOP: 5px;
+}
+
+.down_kefu {
+	WIDTH: 157px;
+	BACKGROUND: url(img3-5_4.png) no-repeat;
+	HEIGHT: 8px
+}
+
+.Obtn {
+	MARGIN-TOP: 5px;
+	FLOAT: left;
+	HEIGHT: 139px;
+	MARGIN-LEFT: -5px
+}
+
+#msnDiv {
+	MARGIN: 9px 9px 9px 31px;
+	HEIGHT: 68px;
+}

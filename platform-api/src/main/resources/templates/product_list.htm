@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>产品列表</title>
+
+    <!--dynamic table-->
+    <link href="js/advanced-datatable/css/demo_page.css" rel="stylesheet"/>
+    <link href="js/advanced-datatable/css/demo_table.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="js/data-tables/DT_bootstrap.css"/>
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" alt=""></a>
+        </div>
+
+        <div class="logo-icon text-center">
+            <a href="index.html"><img src="images/logo_icon.png" alt=""></a>
+        </div>
+        <!--logo and iconic logo end-->
+
+
+        <div class="left-side-inner">
+
+            <!-- visible to small devices only -->
+            <div class="visible-xs hidden-sm hidden-md hidden-lg">
+                <div class="media logged-user">
+                    <img alt="" src="images/photos/user-avatar.png" class="media-object">
+                    <div class="media-body">
+                        <h4><a href="#">John Doe</a></h4>
+                        <span>"Hello There..."</span>
+                    </div>
+                </div>
+
+                <h5 class="left-nav-title">Account Information</h5>
+                <ul class="nav nav-pills nav-stacked custom-nav">
+                    <li><a href="#"><i class="fa fa-user"></i> <span>Profile</span></a></li>
+                    <li><a href="#"><i class="fa fa-cog"></i> <span>Settings</span></a></li>
+                    <li><a href="#"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a></li>
+                </ul>
+            </div>
+
+            <!--sidebar nav start-->
+            <ul class="nav nav-pills nav-stacked custom-nav">
+
+                <li class="menu-list nav-active"><a href="#"><i class="fa fa-th-list"></i> <span>产品</span></a>
+                    <ul class="sub-menu-list">
+                        <li class="active"><a href="products.html">产品列表</a></li>
+                        <li class="active"><a href="product.html">新增产品</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!--sidebar nav end-->
+
+        </div>
+    </div>
+    <!-- left side end-->
+
+    <!-- main content start-->
+    <div class="main-content">
+
+        <!-- header section start-->
+        <div class="header-section">
+
+            <!--toggle button start-->
+            <a class="toggle-btn"><i class="fa fa-bars"></i></a>
+            <!--toggle button end-->
+
+            <!--notification menu start -->
+            <div class="menu-right">
+                <ul class="notification-menu">
+                    <li>
+                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <img src="images/photos/user-avatar.png" alt=""/>
+                            John Doe
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                            <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+                            <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                            <li><a href="#"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <!--notification menu end -->
+
+        </div>
+        <!-- header section end-->
+
+        <!-- page heading start-->
+        <div class="page-heading">
+            <h3>
+                Dynamic Table
+            </h3>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">Data Tables</a>
+                </li>
+                <li class="active"> Dynamic Table</li>
+            </ul>
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            Dynamic Table
+                        </header>
+                        <div class="panel-body">
+                            <div class="adv-table">
+
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <section class="panel">
+                                            二级行业:
+                                            <select id="catId">
+                                                <#list cats as cat>
+                                                    <option <#if cat.id == catId>selected</#if> value="${cat.id}">${cat.name}</option>
+                                                </#list>
+                                            </select>
+                                        </section>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <section class="panel">
+                                            <input placeholder="搜索产品名" id="query" type="text" value="${query!}" class="form-control" aria-controls="dynamic-table">
+                                        </section>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <section class="panel">
+                                            是否热门:
+                                            <select id="hotFlag" name="hotFlag">
+                                                <option value="-1" <#if hotFlag == -1>selected</#if>>全部</option>
+                                                <option value="1" <#if hotFlag == 1>selected</#if>>热门</option>
+                                                <option value="0" <#if hotFlag == 0>selected</#if>>非热门</option>
+                                            </select>
+                                        </section>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <section class="panel">
+                                            <button class="btn btn-primary" id="search" href="products.html" target="_blank">搜索</button>
+                                            <a class="btn btn-success" href="product.html" target="_blank">新增</a>
+                                        </section>
+                                    </div>
+
+                                </div>
+
+
+                                <!-- tables -->
+                                <table class="display table table-bordered table-striped" id="dynamic-table">
+                                    <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>产品代码</th>
+                                        <th>产品名</th>
+                                        <th>产品类别</th>
+                                        <th>是否热门</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    <#if page?? && (page.list?size > 0) >
+                                        <#list page.list as prod>
+                                            <tr class="gradeX">
+                                                <td>${prod.id}</td>
+                                                <td>${prod.code}</td>
+                                                <td>${prod.name}</td>
+                                                <td>${prod.categoryName}</td>
+                                                <td><#if prod.hotFlag>是<#else>否</#if></td>
+                                                <td class="center">
+                                                    <a href="product.html?id=${prod.id}">编辑</a>
+                                                </td>
+                                            </tr>
+                                        </#list>
+                                    </#if>
+                                    </tbody>
+
+                                </table>
+
+                                <!-- pagination -->
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <div class="dataTables_info" id="dynamic-table_info">Showing ${page.pageNum} of ${page.pages}
+                                            pages
+                                        </div>
+                                    </div>
+                                    <div class="span6">
+                                        <div class="dataTables_paginate paging_bootstrap pagination">
+                                            <ul>
+                                                <#if page.hasNextPage>
+                                                    <li class="prev ">
+                                                        <a href="products.html?query=${query!}&pageNum=${page.pageNum - 1}&pcatId=${pcatId!}&catId=${catId!}&hotFlag=${hotFlag!}">← Previous</a>
+                                                    </li>
+                                                </#if>
+                                                <#list 1..page.pages as p>
+                                                    <li
+                                                    <#if p==page.pageNum>class="active"</#if>
+                                                    >
+                                                        <a href="products.html?query=${query!}&pageNum=${p}&pcatId=${pcatId!}&catId=${catId!}&hotFlag=${hotFlag!}">${p}</a>
+                                                    </li>
+                                                </#list>
+
+                                                <#if page.hasNextPage>
+                                                    <li class="next">
+                                                        <a href="products.html?query=${query!}&pageNum=${page.pageNum + 1}&pcatId=${pcatId!}&catId=${catId!}&hotFlag=${hotFlag!}">Next →</a>
+                                                    </li>
+                                                </#if>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!--body wrapper end-->
+
+        <!--footer section start-->
+        <footer>
+            2019 &copy; by Desmond
+        </footer>
+        <!--footer section end-->
+
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="js/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/modernizr.min.js"></script>
+<script src="js/jquery.nicescroll.js"></script>
+
+<!--dynamic table-->
+<script type="text/javascript" language="javascript" src="js/advanced-datatable/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="js/data-tables/DT_bootstrap.js"></script>
+<!--dynamic table initialization -->
+<!--<script src="js/dynamic_table_init.js"></script>-->
+
+<!--common scripts for all pages-->
+<script src="js/scripts.js"></script>
+
+<script type="application/javascript">
+    $('#search').click(function () {
+        var catId = $('#catId').val();
+        var query = $('#query').val();
+        var hotFlag = $('#hotFlag').val();
+
+        window.location.href="products.html?query=" + query + "&catId=" + catId + "&hotFlag=" + hotFlag;
+
+    })
+</script>
+
+</body>
+</html>

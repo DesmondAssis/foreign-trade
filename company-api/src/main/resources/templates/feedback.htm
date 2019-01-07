@@ -1,0 +1,479 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <#include "ftl/head.ftl"/>
+    <script type="text/javascript" src="../js/AnPlus.js"></script>
+    <script type="text/javascript" src="../js/AjaxUploader.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <#include "ftl/header.ftl"/>
+
+
+    <div class="pagebody clear">
+        <div class="pageBG">
+            <!-- 左侧导航栏 -->
+            <#include "ftl/leftbar.ftl"/>
+
+            <div style="height:25px;"></div><div class="mainbody">
+            <!-- nav -->
+            <#include "ftl/nav.ftl"/>
+
+            <h3>Feedback</h3>
+            <div class="content feedback">
+                <form name="feedbackForm" id="feedbackForm" action="feedback-send.html" method="post" target="hidden_frame"  >
+                    <table class="tablesV" border="0" cellpadding="0" cellspacing="5">
+                        <tbody>
+                        <tr>
+                            <th> <span>*</span>Name: </th>
+                            <td><input type="text" name="guestName"  id="guestName" size="30" maxlength="255" >
+                                <div class="limit"> 5- 255 characters. </div>
+                                <span class="mainColor" id="errorsDiv_guestname"></span> </td>
+                        </tr>
+                        <tr>
+                            <th > <span>*</span>Email: </th>
+                            <td><input type="text" name="guestEmail" size="30"    id="guestEmail">
+                                <div class="limit"> <span class="mainColor" id="errorsDiv_guestemail"></span> </div></td>
+                        </tr>
+
+                        <tr id="feedbackProductAndCatatoryOut" >
+                            <th > <span>*</span>catagoryName/productName </th>
+                            <td id="feedbackProductAndCatatory">${names!}<textarea name="products" id="products" rows="13" wrap="VIRTUAL" cols="74" maxlength="3000" style="display:none">${ids!}</textarea></td>
+                        </tr>
+                        <tr>
+                            <th  valign="top"> <span>*</span>Message: </th>
+                            <td nowrap="nowrap" valign="top"><textarea name="guestMessage" id="guestMessage" rows="13" wrap="VIRTUAL" cols="74" maxlength="3000" ></textarea>
+                                <br>
+                                <div style="display: none;">
+                                    <iframe id="templateContentIframe"></iframe>
+                                </div>
+                                <div class="limitm"> 20-3000 characters.<span class="mainColor" id="errorsDiv_guestmessage"></span> </div>
+                                <div class="remark"> Use only English words and punctuation. <br>
+                                    (Please allow pop-upwindows here to check non-English words and punctuation.) <br>
+                                    Please describe your message details <br>
+                                    (such as: product specification, company description, etc.) <br>
+                                    as clearly as possible to get prompt and precise replies. </div>
+                                <div style="display: none;">
+                                    <iframe id="templateContentIframe"></iframe>
+                                </div></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><script language="JavaScript">
+                                function openClosStatus(AAA) {
+                                    if (document.getElementById(AAA).style.display == "block") {
+                                        document.getElementById(AAA).style.display = "none";
+                                        document.openericon.src = '../css/images/div_add.gif';
+                                    } else {
+                                        document.getElementById(AAA).style.display = "block";
+                                        document.openericon.src = '../css/images/div_open.gif';
+                                    }
+                                }
+                            </script>
+                                <div> <a href="javascript:openClosStatus('reqHead');"> <img
+                                        src="../css/images/div_add.gif" name="openericon" width="14"
+                                        height="14" border="0"> </a> <a href="javascript:openClosStatus('reqHead');">Additional
+                                    Information</a> <span class="remark">(Click here to provide more product
+              information/requests.)</span> </div>
+                                <div id="reqHead" style="display: none;">
+                                    <fieldset class="feedback">
+                                        <label class="leftWord one"> Country: </label>
+                                        <div class="rightWord">
+                                            <select name="country" id="country" class="formtext"> <option value="" selected>-- please select
+                                                one --</option> <option value=china>china</option> <option
+                                                    value=australia>australia</option> <option
+                                                    value=canada>canada</option> <option
+                                                    value=malaysia>malaysia</option> <option
+                                                    value=singapore>singapore</option> <option
+                                                    value=united_kingdom>united kingdom</option> <option
+                                                    value=united_states>united states</option> <option
+                                                    value=""></option> <option value="">-- more
+                                                countries/regions --</option> <option value=""></option>
+                                                <option value=afghanistan>afghanistan</option> <option
+                                                        value=albania>albania</option> <option
+                                                        value=algeria>algeria</option> <option
+                                                        value=american_samoa>american samoa</option> <option
+                                                        value=andorra>andorra</option> <option
+                                                        value=angola>angola</option> <option
+                                                        value=anguilla>anguilla</option> <option
+
+                                                        value=antarctica>antarctica</option> <option
+                                                        value=antigua_and_barbuda>antigua and barbuda</option>
+                                                <option value=argentina>argentina</option> <option
+                                                        value=armenia>armenia</option> <option
+                                                        value=aruba>aruba</option> <option
+                                                        value=austria>austria</option> <option
+                                                        value=azerbaijan>azerbaijan</option> <option
+                                                        value=bahamas>bahamas</option> <option
+                                                        value=bahrain>bahrain</option> <option
+                                                        value=bangladesh>bangladesh</option> <option
+                                                        value=barbados>barbados</option> <option
+                                                        value=belarus>belarus</option> <option
+                                                        value=belgium>belgium</option> <option
+                                                        value=belize>belize</option> <option
+                                                        value=benin>benin</option> <option
+                                                        value=bermuda>bermuda</option> <option
+                                                        value=bhutan>bhutan</option> <option
+                                                        value=bolivia>bolivia</option> <option
+                                                        value=bosnia_and_herzegovina>bosnia and herzegovina</option>
+                                                <option value=botswana>botswana</option> <option
+                                                        value=bouvet_island>bouvet island</option> <option
+                                                        value=brazil>brazil</option> <option
+                                                        value=british_indian_ocean_territory>british indian ocean
+                                                    territory</option> <option value=brunei>brunei</option>
+                                                <option value=bulgaria>bulgaria</option> <option
+                                                        value=burkina_faso>burkina faso</option> <option
+                                                        value=burundi>burundi</option> <option
+                                                        value=cambodia>cambodia</option> <option
+                                                        value=cameroon>cameroon</option> <option
+                                                        value=cape_verde>cape verde</option> <option
+                                                        value=cayman_islands>cayman islands</option> <option
+                                                        value=central_african_republic>central african
+                                                    republic</option> <option value=chad>chad</option> <option
+                                                        value=chile>chile</option> <option
+                                                        value=christmas_island>christmas island</option> <option
+                                                        value=cocos_(keeling)_islands>cocos (keeling)
+                                                    islands</option> <option value=colombia>colombia</option>
+                                                <option value=comoros>comoros</option> <option
+                                                        value=conch_republic>conch republic</option> <option
+                                                        value=congo>congo</option> <option value=cook_islands>cook
+                                                    islands</option> <option value=costa_rica>costa
+                                                    rica</option> <option
+                                                        value="cote_d'ivoire_(ivory_coast)">cote d'ivoire (ivory
+                                                    coast)</option> <option value=croatia_(hrvatska )>croatia
+                                                    (hrvatska)</option> <option value=cuba>cuba</option> <option
+                                                        value=cyprus>cyprus</option> <option
+                                                        value=czech_republic>czech republic</option> <option
+                                                        value=denmark>denmark</option> <option
+                                                        value=djibouti>djibouti</option> <option
+                                                        value=dominica>dominica</option> <option
+                                                        value=dominican_republic>dominican republic</option> <option
+                                                        value=east_timor>east timor</option> <option
+                                                        value=ecuador>ecuador</option> <option
+                                                        value=egypt>egypt</option> <option value=el_salvador>el
+                                                    salvador</option> <option value=equatorial_guinea>equatorial
+                                                    guinea</option> <option value=eritrea>eritrea</option>
+                                                <option value=estonia>estonia</option> <option
+                                                        value=ethiopia>ethiopia</option> <option
+                                                        value=falkland_islands_(islas_malvinas )>falkland islands
+                                                    (islas malvinas)</option> <option value=faroe_islands>faroe
+                                                    islands</option> <option value=fiji>fiji</option> <option
+                                                        value=finland>finland</option> <option
+                                                        value=france>france</option> <option
+                                                        value=french_guiana>french guiana</option> <option
+                                                        value=french_polynesia>french polynesia</option> <option
+                                                        value=french_southern_and_antarctic_lands>french southern
+                                                    and antarctic lands</option> <option
+                                                        value=gabon>gabon</option> <option
+                                                        value=gambia>gambia</option> <option
+                                                        value=georgia>georgia</option> <option
+                                                        value=germany>germany</option> <option
+                                                        value=ghana>ghana</option> <option
+                                                        value=gibraltar>gibraltar</option> <option
+                                                        value=greece>greece</option> <option
+                                                        value=greenland>greenland</option> <option
+                                                        value=grenada>grenada</option> <option
+                                                        value=guadeloupe>guadeloupe</option> <option
+                                                        value=guam>guam</option> <option
+                                                        value=guatemala>guatemala</option> <option
+                                                        value=guinea>guinea</option> <option
+                                                        value=guinea-bissau>guinea-bissau</option> <option
+                                                        value=guyana>guyana</option> <option
+                                                        value=haiti>haiti</option> <option
+                                                        value=heard_and_mcdonald_islands>heard and mcdonald
+                                                    islands</option> <option value=honduras>honduras</option>
+                                                <option value=hungary>hungary</option> <option
+                                                        value=iceland>iceland</option> <option
+                                                        value=india>india</option> <option
+                                                        value=indonesia>indonesia</option> <option
+                                                        value=iran>iran</option> <option value=iraq>iraq</option>
+                                                <option value=ireland>ireland</option> <option
+                                                        value=israel>israel</option> <option
+                                                        value=italy>italy</option> <option
+                                                        value=jamaica>jamaica</option> <option
+                                                        value=japan>japan</option> <option
+                                                        value=jordan>jordan</option> <option
+                                                        value=kazakhstan>kazakhstan</option> <option
+                                                        value=kenya>kenya</option> <option
+                                                        value=kiribati>kiribati</option> <option
+                                                        value=kuwait>kuwait</option> <option
+                                                        value=kyrgyzstan>kyrgyzstan</option> <option
+                                                        value=laos>laos</option> <option
+                                                        value=latvia>latvia</option> <option
+                                                        value=lebanon>lebanon</option> <option
+                                                        value=lesotho>lesotho</option> <option
+                                                        value=liberia>liberia</option> <option
+                                                        value=libya>libya</option> <option
+                                                        value=liechtenstein>liechtenstein</option> <option
+                                                        value=lithuania>lithuania</option> <option
+                                                        value=luxembourg>luxembourg</option> <option
+                                                        value=macedonia>macedonia</option> <option
+                                                        value=madagascar>madagascar</option> <option
+                                                        value=malawi>malawi</option> <option
+                                                        value=maldives>maldives</option> <option
+                                                        value=mali>mali</option> <option value=malta>malta</option>
+                                                <option value=marshall_islands>marshall islands</option>
+                                                <option value=martinique>martinique</option> <option
+                                                        value=mauritania>mauritania</option> <option
+                                                        value=mauritius>mauritius</option> <option
+                                                        value=mayotte>mayotte</option> <option
+                                                        value=mexico>mexico</option> <option
+                                                        value=micronesia>micronesia</option> <option
+                                                        value=moldova>moldova</option> <option
+                                                        value=monaco>monaco</option> <option
+                                                        value=mongolia>mongolia</option> <option
+                                                        value=montserrat>montserrat</option> <option
+                                                        value=morocco>morocco</option> <option
+                                                        value=mozambique>mozambique</option> <option
+                                                        value=myanmar>myanmar</option> <option
+                                                        value=namibia>namibia</option> <option
+                                                        value=nauru>nauru</option> <option
+                                                        value=nepal>nepal</option> <option
+                                                        value=netherlands>netherlands</option> <option
+                                                        value=netherlands_antilles>netherlands antilles</option>
+                                                <option value=new_caledonia>new caledonia</option> <option
+                                                        value=new_zealand>new zealand</option> <option
+                                                        value=nicaragua>nicaragua</option> <option
+                                                        value=niger>niger</option> <option
+                                                        value=nigeria>nigeria</option> <option
+                                                        value=niue>niue</option> <option
+                                                        value=norfolk_island>norfolk island</option> <option
+                                                        value=north_korea>north korea</option> <option
+                                                        value=northern_mariana_islands>northern mariana
+                                                    islands</option> <option value=norway>norway</option>
+                                                <option value=oman>oman</option> <option
+                                                        value=pakistan>pakistan</option> <option
+                                                        value=palau>palau</option> <option
+                                                        value=palestine>palestine</option> <option
+                                                        value=panama>panama</option> <option
+                                                        value=papua_new_guinea>papua new guinea</option> <option
+                                                        value=paraguay>paraguay</option> <option
+                                                        value=peru>peru</option> <option
+                                                        value=philippines>philippines</option> <option
+                                                        value=pitcairn_island>pitcairn island</option> <option
+                                                        value=poland>poland</option> <option
+                                                        value=portugal>portugal</option> <option
+                                                        value=puerto_rico>puerto rico</option> <option
+                                                        value=qatar>qatar</option> <option
+                                                        value=reunion>reunion</option> <option
+                                                        value=romania>romania</option> <option
+                                                        value=russia>russia</option> <option
+                                                        value=rwanda>rwanda</option> <option
+                                                        value=samoa>samoa</option> <option value=san_marino>san
+                                                    marino</option> <option value=sao_tome_and_principe>sao tome
+                                                    and principe</option> <option value=saudi_arabia>saudi
+                                                    arabia</option> <option value=senegal>senegal</option>
+                                                <option value=seychelles>seychelles</option> <option
+                                                        value=sierra_leone>sierra leone</option> <option
+                                                        value=slovakia>slovakia</option> <option
+                                                        value=slovenia>slovenia</option> <option
+                                                        value=solomon_islands>solomon islands</option> <option
+                                                        value=somalia>somalia</option> <option
+                                                        value=south_africa>south africa</option> <option
+                                                        value=south_georgia_and_the_south_sandwich_island>south
+                                                    georgia and the south sandwich island</option> <option
+                                                        value=south_korea>south korea</option> <option
+                                                        value=spain>spain</option> <option value=sri_lanka>sri
+                                                    lanka</option> <option value=st._helena>st. helena</option>
+                                                <option value=st._kitts_and_nevis>st. kitts and
+                                                    nevis</option> <option value=st._lucia>st. lucia</option>
+                                                <option value=st._pierre_and_miquelon>st. pierre and
+                                                    miquelon</option> <option
+                                                        value=st._vincent_and_the_grenadines>st. vincent and the
+                                                    grenadines</option> <option value=sudan>sudan</option>
+                                                <option value=suriname>suriname</option> <option
+                                                        value=svalbard_and_jan_mayen>svalbard and jan mayen</option>
+                                                <option value=swaziland>swaziland</option> <option
+                                                        value=sweden>sweden</option> <option
+                                                        value=switzerland>switzerland</option> <option
+                                                        value=syria>syria</option> <option
+                                                        value=tajikistan>tajikistan</option> <option
+                                                        value=tanzania>tanzania</option> <option
+                                                        value=thailand>thailand</option> <option
+                                                        value=togo>togo</option> <option
+                                                        value=tokelau>tokelau</option> <option
+                                                        value=tonga>tonga</option> <option
+                                                        value=trinidad_and_tobago>trinidad and tobago</option>
+                                                <option value=tunisia>tunisia</option> <option
+                                                        value=turkey>turkey</option> <option
+                                                        value=turkmenistan>turkmenistan</option> <option
+                                                        value=turks_and_caicos_islands>turks and caicos
+                                                    islands</option> <option value=tuvalu>tuvalu</option>
+                                                <option value=uganda>uganda</option> <option
+                                                        value=ukraine>ukraine</option> <option
+                                                        value=united_arab_emirates>united arab emirates</option>
+                                                <option value=united_states_minor_outlying_islands>united
+                                                    states minor outlying islands</option> <option
+                                                        value=uruguay>uruguay</option> <option
+                                                        value=uzbekistan>uzbekistan</option> <option
+                                                        value=vanuatu>vanuatu</option> <option
+                                                        value=vatican_city_state_(holy_see )>vatican city state
+                                                    (holy see)</option> <option
+                                                        value=venezuela>venezuela</option> <option
+                                                        value=vietnam>vietnam</option> <option
+                                                        value=virgin_islands_(british )>virgin islands
+                                                    (british)</option> <option value=http://www.jescuba.com/profile/virgin_islands_(u.s.
+                                                                               )>virgin islands (u.s.)</option> <option
+                                                        value=wallis_and_futuna>wallis and futuna</option> <option
+                                                        value=western_sahara>western sahara</option> <option
+                                                        value=yemen>yemen</option> <option
+                                                        value=yugoslavia>yugoslavia</option> <option
+                                                        value=zaire>zaire</option> <option
+                                                        value=zambia>zambia</option> <option
+                                                        value=zimbabwe>zimbabwe</option>
+                                            </select>
+                                        </div>
+                                        <label class="cn"></label>
+                                        <label class="leftWord two"> Company: </label>
+                                        <div class="rightWord">
+                                            <input type="text" id="guestCompany" name="guestCompany" size="30">
+                                        </div>
+                                        <label class="cn"></label>
+                                        <label class="leftWord three"> Phone Number: </label>
+                                        <div class="rightWord">
+                                            <ul class="can">
+                                                <li class="country">
+                                                    <div> Country code </div>
+                                                    <input type="text" id="phoneCountryCode" name="phoneCountryCode" size="10" class="input"
+                                                           onKeyUp="value=value.replace(/[^\d]/g,'') "
+                                                           onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))">
+                                                </li>
+                                                <li class="area">
+                                                    <div> Area code </div>
+                                                    <input type="text" id="phoneAreaCode" name="phoneAreaCode" size="10" class="input"
+                                                           onKeyUp="value=value.replace(/[^\d]/g,'') "
+                                                           onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))">
+                                                </li>
+                                                <li class="number">
+                                                    <div> Tel Number </div>
+                                                    <input type="text" id="phoneTelNum" name="phoneTelNum" size="10" class="input"
+                                                           onKeyUp="value=value.replace(/[^\d]/g,'') "
+                                                           onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <label class="cn"></label>
+                                        <label class="leftWord four"> Fax Number: </label>
+                                        <div class="rightWord">
+                                            <ul class="can">
+                                                <li class="country">
+                                                    <div> Country code </div>
+                                                    <input type="text" id="faxCountryCode" name="faxCountryCode" size="10" class="input"
+                                                           onKeyUp="value=value.replace(/[^\d]/g,'') "
+                                                           onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))">
+                                                </li>
+                                                <li class="area">
+                                                    <div> Area code </div>
+                                                    <input type="text" id="faxAreaCode" name="faxAreaCode" size="10" class="input"
+                                                           onKeyUp="value=value.replace(/[^\d]/g,'') "
+                                                           onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))">
+                                                </li>
+                                                <li class="number">
+                                                    <div> Tel Number </div>
+                                                    <input type="text" id="faxTelNum" name="faxTelNum" size="10" class="input"
+                                                           onKeyUp="value=value.replace(/[^\d]/g,'') "
+                                                           onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <label class="cn"></label>
+                                    </fieldset>
+                                </div></td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td><input type="submit" id ="sub_form_feedback" value="Submit" class="submit">
+                                &nbsp;&nbsp;
+                                <input type="reset" class="submit" value="Reset">
+                                <input type="hidden" name="companyID" id="companyID" value="">
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+                <iframe name='hidden_frame' id="hidden_frame"
+                        style='display:none'></iframe>
+            </div>
+
+        </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <#include "ftl/footer.ftl"/>
+
+    <script type="application/javascript">
+        $("#sub_form_feedback").click(function(){
+            var guestName = $('#guestName').val();
+            var guestEmail = $('#guestEmail').val();
+            var products = $('#products').val();
+            var guestMessage = $('#guestMessage').val();
+
+            if(!guestName || guestName == '') {
+                alert('name cannot be empty!');
+
+                return false;
+            }
+
+            if(!guestEmail || guestEmail == '') {
+                alert('email cannot be empty!');
+
+                return false;
+            }
+
+            if(!guestMessage || guestMessage == '') {
+                alert('messages cannot be empty!');
+
+                return false;
+            }
+
+            var country = $('#country').val();
+            var guestCompany = $('#guestCompany').val();
+
+            var phoneCountryCode = $('#phoneCountryCode').val();
+            var phoneAreaCode = $('#phoneAreaCode').val();
+            var phoneTelNum = $('#phoneTelNum').val();
+
+            var faxCountryCode = $('#faxCountryCode').val();
+            var faxAreaCode = $('#faxAreaCode').val();
+            var faxTelNum = $('#faxTelNum').val();
+
+            // alert(formData)
+            $.ajax({
+                url : '${contextPath!}/feedback-send.html',
+                type : 'POST',
+                cache : false,
+                contentType: "application/json",
+                data : JSON.stringify({
+                    "guestName": guestName,
+                    "guestEmail": guestEmail,
+                    "products": products,
+                    "guestMessage": guestMessage,
+
+                    "country": country,
+                    "guestCompany": guestCompany,
+
+                    "phoneCountryCode": phoneCountryCode,
+                    "phoneAreaCode": phoneAreaCode,
+                    "phoneTelNum": phoneTelNum,
+
+                    "faxCountryCode": faxCountryCode,
+                    "faxAreaCode": faxAreaCode,
+                    "faxTelNum": faxTelNum
+                }),
+                processData : false,
+                success: function(data) {
+                    alert('success! backing...');
+                    history.back();
+                },
+                error: function(data) {
+                    var t = data.responseText;
+                    console.log('error:',t)
+                }
+            })
+        })
+    </script>
+</div>
+</div>
+</body>
+</html>

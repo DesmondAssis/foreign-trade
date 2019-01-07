@@ -1,0 +1,53 @@
+spring:
+
+ # datasource
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc.url
+    username: jdbc.username
+    password: jdbc.pwd
+    
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    cms.filters: stat,wall,log4j
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+
+  #  freemarker
+  freemarker:
+    allow-request-override: false
+    cache: true
+    check-template-location: true
+    charset: utf-8
+    content-type: text/html
+    template-loader-path: ["classpath:/templates/", "classpath:/freemark/"]
+    suffix: .htm
+base:
+  config-properties-location: /data/foreign_trade/config/config.properties
+  file-path: /data/foreign_trade/ifiles
+s:
+  file-domain: file.domain
+  company-domain: company.domain
+  platform-domain: platform.domain
+# email
+mail:
+  host: smtp.126.com
+  port: 25
+  default-encoding: UTF-8
+  username: mail.username
+  password: mail.pwd
+  sender: mail.sender
+  reciever: mail.reciever
+      
+
+    

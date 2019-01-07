@@ -1,0 +1,139 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <#include "ftl/head.ftl"/>
+
+    <script type="text/javascript" src="${contextPath}/js/thickbox/thickbox.js"></script>
+    <link rel="stylesheet" href="${contextPath}/js/thickbox/thickbox.css" type="text/css"></link>
+</head>
+<body>
+<div class="container">
+    <#include "ftl/header.ftl"/>
+
+    <div class="pagebody clear">
+        <div class="pageBG">
+            <!-- 左侧导航栏 -->
+            <#include "ftl/leftbar.ftl"/>
+
+            <div style="height:25px;"></div><div class="mainbody">
+            <!-- nav -->
+            <#include "ftl/nav.ftl"/>
+
+            <div class="content productDetail">
+                <form name="ptoductDetail clear" class="productShow" >
+                    <h3><span class="oneProductNameh3">${prod.code} ${prod.name}</span></h3>
+                    <div class="select">
+                        <div class="button">
+                            <input type="button" name=" inquire" value="Inquire Now" onclick="window.location.href='feedback.html?spSelected=${prod.id}';">
+                        </div>
+                    </div>
+
+                    <div class="select"  style="display:none;">
+                        <div class="checkbox">
+                            <input name="pSelected" value="${prod.id}" checked="checked" type="checkbox" class="select">
+                            <input name="pSelectedName" value="${prod.code}" type="hidden">
+                            <input name="pSelectedModel" value="${prod.name}" type="hidden">
+                            <input  type="hidden"   id="productID"   value="${prod.id}" >
+                        </div>
+                    </div>
+
+                    <div id="TabbedPanels1" class="TabbedPanels">
+                        <div class="TabbedPanelsContentGroup">
+                            <div class="TabbedPanelsContent  ">
+                                <a class=" thickbox  jqzoom" href="${prod.imgBigUrl}" title="">
+                                    <img src="${prod.imgMidUrl}"
+
+                                         title="" alt=""
+                                         jqimg="${prod.imgMidUrl}"/>
+                                    <div class="click">
+                                        <img src="../../css/images/big.png" />
+                                        <label>Enlarge</label>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="productImageDesc">
+
+                        </div>
+                    </div>
+
+
+                    <!--code-->
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                            $("a[rel=example_group]").fancybox({
+                                'transitionIn'		: 'none',
+                                'transitionOut'		: 'none',
+                                'titlePosition' 	: 'over',
+                                'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+                                    return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+                                }
+                            });
+
+                        });
+                    </script>
+                    <!--code-->
+
+                    <div id="TabbedPanels2" class="TabbedPanels">
+                        <ul  class="TabbedPanelsTabGroup" >
+                            <li class="TabbedPanelsTab" tabindex="0" id="prodDescription" >Description</li>
+                        </ul>
+                        <div class="TabbedPanelsContentGroup">
+                            <div class="TabbedPanelsContent">
+                                ${prod.desc}
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="download">
+                        <ul class="download_file">
+                        </ul>
+                    </div>
+
+                    <script type="text/javascript">
+                        <!--
+                        var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
+                        var TabbedPanels2 = new Spry.Widget.TabbedPanels("TabbedPanels2");
+                        //-->
+                    </script>
+
+
+                </form>
+
+
+                <!-- 其他产品推荐 -->
+                <form name="feedback" action="feedback.asp" method="post">
+                    <h2>Other Products</h2>
+                    <div class="select">
+                        <div class="checkbox">
+                            <input type="checkbox" name="allSelected" onclick="Base.selectAll(this);"><label>Select All</label>
+                        </div>
+
+                        <div class="button">
+                            <input type="submit" name="inquire" value="Inquire Now" >
+                        </div>
+                    </div>
+                    <div class="productlist clear">
+                        <!-- 列表 -->
+                        <#include "ftl/segment/list.ftl" />
+                    </div>
+
+                    <span class="more"><a href="product.html?utype=130">more</a></span>
+                </form>
+
+
+            </div>
+
+        </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <#include "ftl/footer.ftl"/>
+</div>
+</div>
+</body>
+</html>

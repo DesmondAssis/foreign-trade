@@ -17,6 +17,10 @@ public class Product {
 
     private String imgPath;
 
+    private String imgPathMid;
+
+    private String imgPathBig;
+
     private Boolean hotFlag;
 
     private Date createTime;
@@ -79,6 +83,22 @@ public class Product {
 
     public void setImgPath(String imgPath) {
         this.imgPath = imgPath == null ? null : imgPath.trim();
+    }
+
+    public String getImgPathMid() {
+        return imgPathMid;
+    }
+
+    public void setImgPathMid(String imgPathMid) {
+        this.imgPathMid = imgPathMid == null ? null : imgPathMid.trim();
+    }
+
+    public String getImgPathBig() {
+        return imgPathBig;
+    }
+
+    public void setImgPathBig(String imgPathBig) {
+        this.imgPathBig = imgPathBig == null ? null : imgPathBig.trim();
     }
 
     public Boolean getHotFlag() {

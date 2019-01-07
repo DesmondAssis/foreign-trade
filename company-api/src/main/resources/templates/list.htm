@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <#include "ftl/head.ftl"/>
+</head>
+<body>
+<div class="container">
+    <#include "ftl/header.ftl"/>
+
+    <div class="pagebody clear">
+        <div class="pageBG">
+            <!-- 左侧导航栏 -->
+            <#include "ftl/leftbar.ftl" />
+
+            <div style="height:25px;"></div>
+            <div class="mainbody">
+                <!-- nav -->
+                <#include "ftl/nav.ftl"/>
+
+
+                <!-- 所有子categories. -->
+                <#if subCats?? && (subCats?size > 0) >
+                    <div class="SubCategories">
+                        <div><span>Sub-categories</span></div>
+                        <ul class="ContentList">
+                            <#list subCats as cat>
+                                <li id="subcat${cat.id}" class="childrenCatagory">
+                                    <a href='product.html?catId=${cat.id}&pcatId=${cat.parentId}'>${cat.name}</a>
+                                </li>
+                            </#list>
+                        </ul>
+                    </div>
+                </#if>
+
+
+                <!-- 当前category -->
+                <h3>WETSUITS</h3>
+
+                <!-- list -->
+                <div class="content productList">
+                    <form name="feedback" action="feedback.html" method="post">
+                        <div class="select">
+                            <div class="checkbox">
+                                <input type="checkbox" name="allSelected" onclick="Base.selectAll(this);"><label>Select
+                                All</label>
+                            </div>
+
+                            <div class="button">
+                                <input type="submit" name="inquire" value="Inquire Now">
+                            </div>
+                        </div>
+
+                        <div class="productlist clear">
+                            <!-- 列表 -->
+                            <#include "ftl/segment/list.ftl" />
+
+                            <br/><br/>
+
+                            <!-- 分页 -->
+                            <div align="center">
+                                <#list 1..page.pages as p>
+                                    <a style='color:cc0000'
+                                       href=product.html?pageNum=${p}&pcatId=${pcatId!}&catId=${catId!}><#if p==page.pageNum>${p}<#else>[${p}]</#if></a>
+                                </#list>
+
+                                &nbsp;
+                                <#if page.hasNextPage>
+                                    <a href="product.html?pageNum=${page.pageNum + 1}&pcatId=${pcatId!}&catId=${catId!}">[Next]</a>
+                                </#if>
+                                <#if page.hasPreviousPage>
+                                    <a href="product.html?pageNum=${page.pageNum - 1}&pcatId=${pcatId!}&catId=${catId!}">[Previous]</a>
+                                </#if>
+
+                                <b> ${page.pageNum}/${page.pages}</b>&nbsp; Page&nbsp; <b>${page.pages}</b> Total
+                            </div>
+
+                        </div>
+
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <#include "ftl/footer.ftl"/>
+</div>
+</div>
+</body>
+</html>

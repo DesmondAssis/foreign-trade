@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class UserController {
     private final UserService userService;
 
-    @GetMapping("/hello-user")
+    @GetMapping("/hello-user.html")
     public String hello(Model model, @RequestParam Integer page) {
         User user = userService.findByPk(1l);
 

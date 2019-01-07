@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>Form Layouts</title>
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="sticky-header">
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" alt=""></a>
+        </div>
+
+        <div class="logo-icon text-center">
+            <a href="index.html"><img src="images/logo_icon.png" alt=""></a>
+        </div>
+        <!--logo and iconic logo end-->
+
+
+        <div class="left-side-inner">
+
+            <!-- visible to small devices only -->
+            <div class="visible-xs hidden-sm hidden-md hidden-lg">
+                <div class="media logged-user">
+                    <img alt="" src="images/photos/user-avatar.png" class="media-object">
+                    <div class="media-body">
+                        <h4><a href="#">John Doe</a></h4>
+                        <span>"Hello There..."</span>
+                    </div>
+                </div>
+
+                <h5 class="left-nav-title">Account Information</h5>
+                <ul class="nav nav-pills nav-stacked custom-nav">
+                    <li><a href="#"><i class="fa fa-user"></i> <span>Profile</span></a></li>
+                    <li><a href="#"><i class="fa fa-cog"></i> <span>Settings</span></a></li>
+                    <li><a href="#"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a></li>
+                </ul>
+            </div>
+
+            <!--sidebar nav start-->
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li class="menu-list"><a href="index.html"><i class="fa fa-home"></i> <span>Dashboard</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="index_alt.html"> Dashboard 1</a></li>
+                        <li><a href="index.html"> Dashboard 2</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-list nav-active"><a href="#"><i class="fa fa-th-list"></i> <span>Data Tables</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="basic_table.html"> Basic Table</a></li>
+                        <li class="active"><a href="dynamic_table.html"> Advanced Table</a></li>
+                        <li><a href="responsive_table.html"> Responsive Table</a></li>
+                        <li><a href="editable_table.html"> Edit Table</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!--sidebar nav end-->
+
+        </div>
+    </div>
+    <!-- left side end-->
+
+    <!-- main content start-->
+    <div class="main-content">
+
+        <!--body wrapper start-->
+        <section class="wrapper">
+            <!-- page start-->
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            Form Elements
+                        </header>
+                        <div class="panel-body">
+                            <form class="form-horizontal adminex-form" id="product_form">
+                                <div class="form-group">
+                                    <label class="col-lg-2 col-sm-2 control-label">产品id</label>
+                                    <div class="col-lg-10">
+                                        <input type="hidden" name="id" value="${prod!}" />
+                                        <p class="form-control-static">999</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label col-lg-2">行业</label>
+                                    <div class="col-lg-10">
+                                        <select class="form-control m-bot15" name="categoryId">
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option selected>Option 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">产品代码</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="code" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">产品名</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="name" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label col-lg-2" >是否热门产品</label>
+                                    <div class="col-lg-10">
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="hotFlag" id="optionsRadios1"
+                                                       value="false">
+                                                非热门产品
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="hotFlag" id="optionsRadios2"
+                                                       value="true" checked>
+                                                热门产品
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">小图片</label>
+                                    <input type="file" class="col-sm-4" id="small_prod_file">
+                                    <input type="hidden" value="" name="imgName" id="imgName" />
+                                    <input type="hidden" value="" name="imgPath" id="smallProdImgPath" />
+                                    <input type="button" class="col-sm-1" id="small_prod_img_btn" value="上传"/>
+                                    <div class="col-md-1">
+                                        <div class="panel widget-info-one">
+                                            <div class="avatar-img">
+                                                <img src="images/gallery/image3.jpg" id = "small_prod_img" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">大图片</label>
+                                    <input type="file" class="col-sm-4" id="big_prod_file">
+                                    <input type="hidden" value="" name="imgPathLarge" id="bigProdImgPath" />
+                                    <input type="button" class="col-sm-1" id="big_prod_img_btn" value="上传"/>
+                                    <div class="col-md-2">
+                                        <div class="panel widget-info-one">
+                                            <div class="avatar-img">
+                                                <img src="images/gallery/image3.jpg" id = "big_prod_img" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">产品描述</label>
+
+                                    <div class="col-sm-10">
+                                        <textarea class="form-control ckeditor" name="desc" rows="6"></textarea>
+                                    </div>
+                                </div>
+
+
+                                <button type="submit" class="btn btn-primary">保存</button>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!-- page end-->
+        </section>
+        <!--body wrapper end-->
+
+        <!--footer section start-->
+        <footer>
+            2019 &copy;  by Desmond
+        </footer>
+        <!--footer section end-->
+
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="js/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/modernizr.min.js"></script>
+<script src="js/jquery.nicescroll.js"></script>
+
+<script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
+
+<!--common scripts for all pages-->
+<script src="js/scripts.js"></script>
+
+<script type="text/javascript">
+    $('#small_prod_img_btn').click(function () {
+        var file = $('#small_prod_file');
+        var fileName = $('#imgName');
+        var filePath = $('#smallProdImgPath');
+        var img = $('#small_prod_img');
+
+        upload(file, img, fileName, filePath);
+    });
+
+    $('#big_prod_img_btn').click(function () {
+        var file = $('#big_prod_file');
+        var fileName = $('#imgName');
+        var filePath = $('#bigProdImgPath');
+        var img = $('#big_prod_img');
+
+        upload(file, img, fileName, filePath);
+    });
+
+
+    var upload = function ($fileInput, $img, $fileName, $filePath) {
+        var formData = new FormData();
+        formData.append("file", $fileInput[0].files[0]);
+        $.ajax({
+            url : 'http://localhost:9096/file/upload',
+            type : 'POST',
+            data : formData,
+            // 告诉jQuery不要去处理发送的数据
+            processData : false,
+            // 告诉jQuery不要去设置Content-Type请求头
+            contentType : false,
+            beforeSend:function(){
+                console.log("正在进行，请稍候");
+            },
+            success : function(responseStr) {
+                var url = responseStr.url;
+                var fileName = responseStr.fileName;
+                var filePath = responseStr.filePath;
+
+                $img.attr('src', url);
+                $img.attr('alt', fileName);
+
+                $fileName.val(fileName);
+                $filePath.val(filePath);
+            },
+            error : function(responseStr) {
+                console.log("error");
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

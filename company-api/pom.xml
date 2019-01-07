@@ -6,7 +6,7 @@
 	<groupId>com.desmond.foreigntrade</groupId>
 	<artifactId>company-api</artifactId>
 	<version>1.0.0</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>company-api</name>
 	<description>Demo project for Spring Boot</description>

@@ -4,9 +4,9 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: ${url}
-    username: ${uname}
-    password: ${pwd}
+    url: jdbc.url
+    username: jdbc.username
+    password: jdbc.pwd
     
     initialSize: 5
     minIdle: 5
@@ -30,17 +30,24 @@ spring:
     check-template-location: true
     charset: utf-8
     content-type: text/html
-    template-loader-path: ["classpath:/templates/"]
+    template-loader-path: ["classpath:/templates/", "classpath:/freemark/"]
+    suffix: .htm
 base:
-  jdbc-properties-location: /Users/presleyli/java/profile/foreign_trade/jdbc.properties
+  config-properties-location: /Users/presleyli/java/profile/foreign_trade/config_dev.properties
+  file-path: /Library/WebServer/Documents/ifiles
+s:
+  file-domain: file.domain
+  company-domain: company.domain
+  platform-domain: platform.domain
 # email
 mail:
-  host: smtp.exmail.qq.com
-  port: 465
+  host: smtp.126.com
+  port: 25
   default-encoding: UTF-8
-  username: xxx
-  password: xxx
-  sender: xxx
+  username: mail.username
+  password: mail.pwd
+  sender: mail.sender
+  reciever: mail.reciever
       
-    
+
     

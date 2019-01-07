@@ -575,6 +575,146 @@ public class ProductExample {
             return (Criteria) this;
         }
 
+        public Criteria andImgPathMidIsNull() {
+            addCriterion("img_path_mid is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathMidIsNotNull() {
+            addCriterion("img_path_mid is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathMidEqualTo(String value) {
+            addCriterion("img_path_mid =", value, "imgPathMid");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathMidNotEqualTo(String value) {
+            addCriterion("img_path_mid <>", value, "imgPathMid");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathMidGreaterThan(String value) {
+            addCriterion("img_path_mid >", value, "imgPathMid");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathMidGreaterThanOrEqualTo(String value) {
+            addCriterion("img_path_mid >=", value, "imgPathMid");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathMidLessThan(String value) {
+            addCriterion("img_path_mid <", value, "imgPathMid");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathMidLessThanOrEqualTo(String value) {
+            addCriterion("img_path_mid <=", value, "imgPathMid");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathMidLike(String value) {
+            addCriterion("img_path_mid like", value, "imgPathMid");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathMidNotLike(String value) {
+            addCriterion("img_path_mid not like", value, "imgPathMid");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathMidIn(List<String> values) {
+            addCriterion("img_path_mid in", values, "imgPathMid");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathMidNotIn(List<String> values) {
+            addCriterion("img_path_mid not in", values, "imgPathMid");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathMidBetween(String value1, String value2) {
+            addCriterion("img_path_mid between", value1, value2, "imgPathMid");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathMidNotBetween(String value1, String value2) {
+            addCriterion("img_path_mid not between", value1, value2, "imgPathMid");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathBigIsNull() {
+            addCriterion("img_path_big is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathBigIsNotNull() {
+            addCriterion("img_path_big is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathBigEqualTo(String value) {
+            addCriterion("img_path_big =", value, "imgPathBig");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathBigNotEqualTo(String value) {
+            addCriterion("img_path_big <>", value, "imgPathBig");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathBigGreaterThan(String value) {
+            addCriterion("img_path_big >", value, "imgPathBig");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathBigGreaterThanOrEqualTo(String value) {
+            addCriterion("img_path_big >=", value, "imgPathBig");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathBigLessThan(String value) {
+            addCriterion("img_path_big <", value, "imgPathBig");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathBigLessThanOrEqualTo(String value) {
+            addCriterion("img_path_big <=", value, "imgPathBig");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathBigLike(String value) {
+            addCriterion("img_path_big like", value, "imgPathBig");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathBigNotLike(String value) {
+            addCriterion("img_path_big not like", value, "imgPathBig");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathBigIn(List<String> values) {
+            addCriterion("img_path_big in", values, "imgPathBig");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathBigNotIn(List<String> values) {
+            addCriterion("img_path_big not in", values, "imgPathBig");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathBigBetween(String value1, String value2) {
+            addCriterion("img_path_big between", value1, value2, "imgPathBig");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgPathBigNotBetween(String value1, String value2) {
+            addCriterion("img_path_big not between", value1, value2, "imgPathBig");
+            return (Criteria) this;
+        }
+
         public Criteria andHotFlagIsNull() {
             addCriterion("hot_flag is null");
             return (Criteria) this;

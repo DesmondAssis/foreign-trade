@@ -1,0 +1,84 @@
+.title{  }
+label.more { display:block; padding:3px 5px; text-align:right;}
+label.more a{ margin-right:10px;  }
+
+
+.main_top{ overflow:hidden; margin-top:10px;}
+/*-----------HotAboutUs-------------*/
+
+.HotAboutUs{ float:left; width:441px;background:url(images/about.png) no-repeat left top;}
+.HotAboutUs .title{background:url(images/about_title.png) no-repeat left top; height:35px;}
+.HotAboutUs .title h2{ display:none;}
+.HotAboutUs .detail{  padding:10px; text-align:justify; text-justify:distribute; line-height:21px; overflow:hidden; height:125px; }
+.HotAboutUs label{ float:left; padding:10px;background:url(images/more.png) no-repeat 10px center; width:65px; }
+.HotAboutUs label a{ text-align:center; color:#fff; margin-right:0; }
+
+/*-----------HotNews-------------*/
+
+.HotNews{ float:right; width:293px; height:215px;background:url(images/new.png) no-repeat left top; }
+.HotNews .title{background:url(images/new_title.png) no-repeat left top; height:35px;}
+.HotNews .title h2{ display:none;}
+.HotNews .detail{ padding:5px 10px 5px 20px; overflow:hidden; }
+.HotNews .detail ul{   width:100%; }
+.HotNews .detail li{ line-height:24px; float:left; width:100%;}
+.HotNews .detail li a{ background:url(images/new_li.png) no-repeat 0px 10px; padding-left:15px; color:#fff;  display:block;}
+.HotNews .detail li .newsListdate{ display:none; }
+.HotNews .detail li .idnews{ display:none;}
+.HotNews label{ }
+.HotNews label a{ }
+.HotNews span.hdnews,.HotNews span.picNews{ display:none;}
+
+/*-----------HotProduct-------------*/
+
+.HotProduct{ margin-top:10px; }
+.HotProduct .title{background:url(images/hot_title.png) no-repeat left top; height:35px; border-bottom:1px solid #000; overflow:hidden;}
+.HotProduct .title h2{ display:none;}
+.HotProduct .productlist{}
+.HotProduct .bk_pro{ margin:15px 0 0 0 ; padding:0; width:244px; background:none; border:0; }
+.HotProduct .hp2{ padding: 0 5px;}
+.HotProduct .bk_pro div { float:left; width:140px; background:none;}
+.HotProduct .bk_pro input{ display:none;}
+.HotProduct .bk_pro .imageDiv{width:98px; height:168px;margin:0;border:1px solid #fff;display:table-cell; vertical-align:middle;
+line-height:168px; *display:block; *font-size:88px; _font-size:94px; text-align:center; }
+.HotProduct .bk_pro div .item{ display:none;}
+.HotProduct .bk_pro div .name{ margin-left:5px; color:#fff; background:#2e80ba; overflow:hidden; height:22px; }
+.HotProduct .bk_pro div .name strong{ font-weight:normal;}
+.HotProduct .bk_pro div br{ display:none;}
+.HotProduct .bk_pro div .description {display:block;margin-left:5px; height:105px; overflow:hidden;text-align:left;}
+.HotProduct .bk_pro div .item{ display:none;}
+.HotProduct .bk_pro .hotpromore{text-align:center; display:block;float:left; padding:10px;background:url(images/more.png) no-repeat 10px center; width:70px;}
+.HotProduct .bk_pro .hotpromore a{ color:#fff; margin-right:0;}
+.HotProduct label{ display:block; float:right; padding:0;line-height:35px;}
+.HotProduct label a{ font-weight:bold; }
+
+
+
+/************************** Footer **************************/
+
+/*-----------HotKeyword-------------*/
+
+.HotKeyword{ padding:0 20px;text-align:center;  color:#000; overflow:hidden;}
+.HotKeyword li{display:inline; line-height:21px;}
+
+
+
+/*-----------HotContact-------------*/
+.HotContact{ display:none;margin:4px auto; line-height:20px;}
+.HotContact ul{ text-align:center; }
+.HotContact li{ display:inline; margin:0 8px; }
+
+
+
+/*-----------copyright-------------*/
+.copyright{ text-align:center; background:#000; padding:10px 0; margin:20px 0;}
+.copyright li{ display:inline; margin:0 3px;color:#fff;}
+.copyright li a{ color:#fff;}
+/*-----------HotFriendlink-------------*/
+.HotFriendlink{ display:none; text-align:center;  margin:8px auto 20px auto;; }
+.HotFriendlink li{ display:inline; margin:0 5px;}
+
+
+
+
+
+

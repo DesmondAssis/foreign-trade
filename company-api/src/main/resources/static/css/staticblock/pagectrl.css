@@ -1,0 +1,104 @@
+/* pagination  css defines */
+.pop_msg{
+	 position: absolute;
+	 z-index: 999;
+	 background:#0063DC;
+	 font-weight:blod;
+	 font-size:14px;
+	 height:30px;
+}
+div.pagination {
+	text-align: right;
+
+	width:100%;
+	/*float:left;*/
+	height:22px;
+	font-size:12px;
+	font-weight:noraml;
+	clear:left;
+
+}
+
+div.pagination a{
+	text-decoration:none;
+	font-weight:noraml;
+	}
+
+a.pagination {
+	margin: 1px;
+	padding: 3px 6px 2px 6px;
+	border: 1px solid #ddd;
+	background-color: white;
+	color: #0063DC;
+}
+
+a.pagination:hover {
+	margin: 1px;
+	padding: 3px 6px 2px 6px;
+	border: 1px solid #000;
+	background-color: #0063DC;
+	color: #FFFFFF;
+}
+
+span.pagination {
+	margin: 1px;
+	padding: 3px 6px 2px 6px;
+	border: 1px solid #ddd;
+	background-color: white;
+	color: #999;
+}
+
+.pagination_cur {
+	margin: 1px;
+	font-weight: bold;
+	padding: 3px 6px 2px 6px;
+	background-color: white;
+	color: #000;
+}
+.remindtext{
+	color:#999;
+	font-size: 11px;
+
+}
+
+/* end of pagination css */
+
+
+/*solution*/
+.HotAboutUs * {float:none;}
+.AboutUs * {float:none;}
+
+.newsDetail * {float:none;}
+.TabbedPanelsContentGroup * {float:none;}
+.Self * {float:none;}
+
+
+.standardProductName{display: none;}
+.standardModel{display: none;}
+.standardDescription{display: none;}
+.newsdate{display:none;}
+.click{display:none;}
+.click img{display:none;}
+.newsListdate{display:none;}
+.newsValidityTime{display:none;}
+.productImageDesc{display:none;}
+.newsdh{float:none;}
+.newshome{float:none;}
+.vippagectlCN{display:none;}
+.vippagectl{display:block;}
+.oneProductNameh3{ float:none;}
+.oneproductmodelh3{ float:none; }
+
+/*categorydesc*/
+.ContentList .productSubCatagory{display:none;}
+.hotpromore{display:none;}
+.mainbody .newsList li a{float:left !important;}
+.HotNews .detail li a{float:left !important;}
+
+.HotFriendlink .hotweb2{display:none;}
+.HotFriendlink .hotweb1{display:none;}
+
+
+#searchContent .ad .title{background:#eee; border:0 none;font-size:16px;margin-top:10px;height:24px;line-height:24px;}
+#searchContent .ad .detail *{float:none;}
+#searchContent .ad cite a{color:green;font-style:normal;}

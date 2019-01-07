@@ -3,10 +3,17 @@
 <mapper namespace="com.desmond.foreigntrade.dao.InquireMapper">
   <resultMap id="BaseResultMap" type="com.desmond.foreigntrade.entity.Inquire">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="product_id" jdbcType="INTEGER" property="productId" />
-    <result column="customer_name" jdbcType="VARCHAR" property="customerName" />
-    <result column="email" jdbcType="VARCHAR" property="email" />
-    <result column="message" jdbcType="VARCHAR" property="message" />
+    <result column="guest_name" jdbcType="VARCHAR" property="guestName" />
+    <result column="guest_email" jdbcType="VARCHAR" property="guestEmail" />
+    <result column="guest_message" jdbcType="VARCHAR" property="guestMessage" />
+    <result column="country" jdbcType="VARCHAR" property="country" />
+    <result column="guest_company" jdbcType="VARCHAR" property="guestCompany" />
+    <result column="phone_country_code" jdbcType="VARCHAR" property="phoneCountryCode" />
+    <result column="phone_area_code" jdbcType="VARCHAR" property="phoneAreaCode" />
+    <result column="phone_tel_num" jdbcType="VARCHAR" property="phoneTelNum" />
+    <result column="fax_country_code" jdbcType="VARCHAR" property="faxCountryCode" />
+    <result column="fax_area_code" jdbcType="VARCHAR" property="faxAreaCode" />
+    <result column="fax_tel_num" jdbcType="VARCHAR" property="faxTelNum" />
     <result column="send_mail" jdbcType="BIT" property="sendMail" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
@@ -71,8 +78,9 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, product_id, customer_name, email, message, send_mail, create_time, update_time, 
-    del_flag
+    id, guest_name, guest_email, guest_message, country, guest_company, phone_country_code, 
+    phone_area_code, phone_tel_num, fax_country_code, fax_area_code, fax_tel_num, send_mail, 
+    create_time, update_time, del_flag
   </sql>
   <select id="selectByExample" parameterType="com.desmond.foreigntrade.entity.InquireExample" resultMap="BaseResultMap">
     select
@@ -105,32 +113,60 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.desmond.foreigntrade.entity.Inquire">
-    insert into inquire (id, product_id, customer_name, 
-      email, message, send_mail, 
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into inquire (guest_name, guest_email, guest_message, 
+      country, guest_company, phone_country_code, 
+      phone_area_code, phone_tel_num, fax_country_code, 
+      fax_area_code, fax_tel_num, send_mail, 
       create_time, update_time, del_flag
       )
-    values (#{id,jdbcType=INTEGER}, #{productId,jdbcType=INTEGER}, #{customerName,jdbcType=VARCHAR}, 
-      #{email,jdbcType=VARCHAR}, #{message,jdbcType=VARCHAR}, #{sendMail,jdbcType=BIT}, 
+    values (#{guestName,jdbcType=VARCHAR}, #{guestEmail,jdbcType=VARCHAR}, #{guestMessage,jdbcType=VARCHAR}, 
+      #{country,jdbcType=VARCHAR}, #{guestCompany,jdbcType=VARCHAR}, #{phoneCountryCode,jdbcType=VARCHAR}, 
+      #{phoneAreaCode,jdbcType=VARCHAR}, #{phoneTelNum,jdbcType=VARCHAR}, #{faxCountryCode,jdbcType=VARCHAR}, 
+      #{faxAreaCode,jdbcType=VARCHAR}, #{faxTelNum,jdbcType=VARCHAR}, #{sendMail,jdbcType=BIT}, 
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{delFlag,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.desmond.foreigntrade.entity.Inquire">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
     insert into inquire
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
+      <if test="guestName != null">
+        guest_name,
       </if>
-      <if test="productId != null">
-        product_id,
+      <if test="guestEmail != null">
+        guest_email,
       </if>
-      <if test="customerName != null">
-        customer_name,
+      <if test="guestMessage != null">
+        guest_message,
       </if>
-      <if test="email != null">
-        email,
+      <if test="country != null">
+        country,
       </if>
-      <if test="message != null">
-        message,
+      <if test="guestCompany != null">
+        guest_company,
+      </if>
+      <if test="phoneCountryCode != null">
+        phone_country_code,
+      </if>
+      <if test="phoneAreaCode != null">
+        phone_area_code,
+      </if>
+      <if test="phoneTelNum != null">
+        phone_tel_num,
+      </if>
+      <if test="faxCountryCode != null">
+        fax_country_code,
+      </if>
+      <if test="faxAreaCode != null">
+        fax_area_code,
+      </if>
+      <if test="faxTelNum != null">
+        fax_tel_num,
       </if>
       <if test="sendMail != null">
         send_mail,
@@ -146,20 +182,38 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
+      <if test="guestName != null">
+        #{guestName,jdbcType=VARCHAR},
       </if>
-      <if test="productId != null">
-        #{productId,jdbcType=INTEGER},
+      <if test="guestEmail != null">
+        #{guestEmail,jdbcType=VARCHAR},
       </if>
-      <if test="customerName != null">
-        #{customerName,jdbcType=VARCHAR},
+      <if test="guestMessage != null">
+        #{guestMessage,jdbcType=VARCHAR},
       </if>
-      <if test="email != null">
-        #{email,jdbcType=VARCHAR},
+      <if test="country != null">
+        #{country,jdbcType=VARCHAR},
       </if>
-      <if test="message != null">
-        #{message,jdbcType=VARCHAR},
+      <if test="guestCompany != null">
+        #{guestCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneCountryCode != null">
+        #{phoneCountryCode,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneAreaCode != null">
+        #{phoneAreaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneTelNum != null">
+        #{phoneTelNum,jdbcType=VARCHAR},
+      </if>
+      <if test="faxCountryCode != null">
+        #{faxCountryCode,jdbcType=VARCHAR},
+      </if>
+      <if test="faxAreaCode != null">
+        #{faxAreaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="faxTelNum != null">
+        #{faxTelNum,jdbcType=VARCHAR},
       </if>
       <if test="sendMail != null">
         #{sendMail,jdbcType=BIT},
@@ -187,17 +241,38 @@
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.productId != null">
-        product_id = #{record.productId,jdbcType=INTEGER},
+      <if test="record.guestName != null">
+        guest_name = #{record.guestName,jdbcType=VARCHAR},
       </if>
-      <if test="record.customerName != null">
-        customer_name = #{record.customerName,jdbcType=VARCHAR},
+      <if test="record.guestEmail != null">
+        guest_email = #{record.guestEmail,jdbcType=VARCHAR},
       </if>
-      <if test="record.email != null">
-        email = #{record.email,jdbcType=VARCHAR},
+      <if test="record.guestMessage != null">
+        guest_message = #{record.guestMessage,jdbcType=VARCHAR},
       </if>
-      <if test="record.message != null">
-        message = #{record.message,jdbcType=VARCHAR},
+      <if test="record.country != null">
+        country = #{record.country,jdbcType=VARCHAR},
+      </if>
+      <if test="record.guestCompany != null">
+        guest_company = #{record.guestCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="record.phoneCountryCode != null">
+        phone_country_code = #{record.phoneCountryCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.phoneAreaCode != null">
+        phone_area_code = #{record.phoneAreaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.phoneTelNum != null">
+        phone_tel_num = #{record.phoneTelNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.faxCountryCode != null">
+        fax_country_code = #{record.faxCountryCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.faxAreaCode != null">
+        fax_area_code = #{record.faxAreaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.faxTelNum != null">
+        fax_tel_num = #{record.faxTelNum,jdbcType=VARCHAR},
       </if>
       <if test="record.sendMail != null">
         send_mail = #{record.sendMail,jdbcType=BIT},
@@ -219,10 +294,17 @@
   <update id="updateByExample" parameterType="map">
     update inquire
     set id = #{record.id,jdbcType=INTEGER},
-      product_id = #{record.productId,jdbcType=INTEGER},
-      customer_name = #{record.customerName,jdbcType=VARCHAR},
-      email = #{record.email,jdbcType=VARCHAR},
-      message = #{record.message,jdbcType=VARCHAR},
+      guest_name = #{record.guestName,jdbcType=VARCHAR},
+      guest_email = #{record.guestEmail,jdbcType=VARCHAR},
+      guest_message = #{record.guestMessage,jdbcType=VARCHAR},
+      country = #{record.country,jdbcType=VARCHAR},
+      guest_company = #{record.guestCompany,jdbcType=VARCHAR},
+      phone_country_code = #{record.phoneCountryCode,jdbcType=VARCHAR},
+      phone_area_code = #{record.phoneAreaCode,jdbcType=VARCHAR},
+      phone_tel_num = #{record.phoneTelNum,jdbcType=VARCHAR},
+      fax_country_code = #{record.faxCountryCode,jdbcType=VARCHAR},
+      fax_area_code = #{record.faxAreaCode,jdbcType=VARCHAR},
+      fax_tel_num = #{record.faxTelNum,jdbcType=VARCHAR},
       send_mail = #{record.sendMail,jdbcType=BIT},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
@@ -234,17 +316,38 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.desmond.foreigntrade.entity.Inquire">
     update inquire
     <set>
-      <if test="productId != null">
-        product_id = #{productId,jdbcType=INTEGER},
+      <if test="guestName != null">
+        guest_name = #{guestName,jdbcType=VARCHAR},
       </if>
-      <if test="customerName != null">
-        customer_name = #{customerName,jdbcType=VARCHAR},
+      <if test="guestEmail != null">
+        guest_email = #{guestEmail,jdbcType=VARCHAR},
       </if>
-      <if test="email != null">
-        email = #{email,jdbcType=VARCHAR},
+      <if test="guestMessage != null">
+        guest_message = #{guestMessage,jdbcType=VARCHAR},
       </if>
-      <if test="message != null">
-        message = #{message,jdbcType=VARCHAR},
+      <if test="country != null">
+        country = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="guestCompany != null">
+        guest_company = #{guestCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneCountryCode != null">
+        phone_country_code = #{phoneCountryCode,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneAreaCode != null">
+        phone_area_code = #{phoneAreaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneTelNum != null">
+        phone_tel_num = #{phoneTelNum,jdbcType=VARCHAR},
+      </if>
+      <if test="faxCountryCode != null">
+        fax_country_code = #{faxCountryCode,jdbcType=VARCHAR},
+      </if>
+      <if test="faxAreaCode != null">
+        fax_area_code = #{faxAreaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="faxTelNum != null">
+        fax_tel_num = #{faxTelNum,jdbcType=VARCHAR},
       </if>
       <if test="sendMail != null">
         send_mail = #{sendMail,jdbcType=BIT},
@@ -263,10 +366,17 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.desmond.foreigntrade.entity.Inquire">
     update inquire
-    set product_id = #{productId,jdbcType=INTEGER},
-      customer_name = #{customerName,jdbcType=VARCHAR},
-      email = #{email,jdbcType=VARCHAR},
-      message = #{message,jdbcType=VARCHAR},
+    set guest_name = #{guestName,jdbcType=VARCHAR},
+      guest_email = #{guestEmail,jdbcType=VARCHAR},
+      guest_message = #{guestMessage,jdbcType=VARCHAR},
+      country = #{country,jdbcType=VARCHAR},
+      guest_company = #{guestCompany,jdbcType=VARCHAR},
+      phone_country_code = #{phoneCountryCode,jdbcType=VARCHAR},
+      phone_area_code = #{phoneAreaCode,jdbcType=VARCHAR},
+      phone_tel_num = #{phoneTelNum,jdbcType=VARCHAR},
+      fax_country_code = #{faxCountryCode,jdbcType=VARCHAR},
+      fax_area_code = #{faxAreaCode,jdbcType=VARCHAR},
+      fax_tel_num = #{faxTelNum,jdbcType=VARCHAR},
       send_mail = #{sendMail,jdbcType=BIT},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},

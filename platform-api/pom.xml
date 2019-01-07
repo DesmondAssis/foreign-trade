@@ -6,7 +6,7 @@
     <groupId>com.desmond.foreigntrade</groupId>
     <artifactId>platform-api</artifactId>
     <version>1.0.0</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <name>platform-api</name>
     <description>platform project for Spring Boot</description>
