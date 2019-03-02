@@ -40,7 +40,7 @@ public class ProductController extends BaseController {
                         @RequestParam(required = false, defaultValue = "1") Integer order,
                         @RequestParam(required = false) Integer pcatId,
                         String query,
-                        @RequestParam Integer catId,
+                        @RequestParam(required = false) Integer catId,
                         @RequestParam(required = false, defaultValue = "1") Integer pageNum,
                         @RequestParam(required = false, defaultValue = "12") Integer pageSize) {
         PageInfo<ProductVO> list = productService.listByCategory(order, -1, query, pcatId, catId, pageNum, pageSize);

@@ -5,7 +5,7 @@
     @import "${contextPath}/css/style.css";
 </style>
 <!--[if lte IE 6]><script type="text/javascript">try{document.execCommand("BackgroundImageCache", false, true);}catch(e){}</script><![endif]-->
-<title>Home-Jesn Enterprises Pte Ltd</title>
+<title>Home Page</title>
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="rss.xml" />
 <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="rss.xml" />
 <link rel="alternate" type="text/xml" title="RSS .92" href="rss.xml" />

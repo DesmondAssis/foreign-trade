@@ -3,9 +3,9 @@
     <div class="top_header">
         <div class="top">
             <h1 class="logo">
-                <a href="www.jescuba.html">
+                <a href="index.html">
 
-                    Jesn Enterprises Pte Ltd
+                    Home Page
 
                     <img src="css/images/logo.jpg" alt="" />
                 </a>
@@ -13,13 +13,13 @@
 
             <div class="lg">
                 <a href="/" class="cn">Service</a>
-                <a href="sitemap.asp" class="en">Sitemap</a>
-                <a href="/" class="sp">Search</a>
+                <a href="sitemap.html" class="en">Sitemap</a>
+                <a href="index.html" class="sp">Search</a>
             </div>
         </div>
 
         <h1 class="logo2">
-            <a href="www.jescuba.html">
+            <a href="index.html">
                 <img src="css/images/logo2.jpg" alt="" />
             </a>
         </h1>

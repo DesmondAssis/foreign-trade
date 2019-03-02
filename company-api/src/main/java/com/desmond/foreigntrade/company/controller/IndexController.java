@@ -30,8 +30,13 @@ public class IndexController extends BaseController {
 
     @GetMapping("/index.html")
     public String index(Model model) {
-        User user = userService.findByPk(1l);
+        super.processBasic(model);
 
+        return "index";
+    }
+
+    @GetMapping("/")
+    public String indexRedirct(Model model) {
         super.processBasic(model);
 
         return "index";

@@ -8,8 +8,8 @@
             <li><strong>Tel: </strong>86-21-50277708</li>
             <li><strong>Fax: </strong>86-21-50277707</li>
             <li><strong>E-Mail: </strong>
-                <a href="mailto:sales@jescuba.com">
-                    sales@jescuba.com
+                <a href="mailto:annie06121126@163.com">
+                    annie06121126@163.com
                 </a>
                 &nbsp;
                 <a href="mailto:">
@@ -21,10 +21,10 @@
 
     <ul class="copyright">
         <li>Tel: 86-135-24829402</li>
-        <li>Copyright &copy; 2018 <a href="www.jescuba.html">Jesn Enterprises Pte Ltd</a> All Right Reserved</li>
-        <li><a href="friendly.asp">Friendly Link</a></li>
+        <li>Copyright &copy; 2018 <a href="index.html">Alina Enterprises Pte Ltd</a> All Right Reserved</li>
+        <li><a href="index.html">Friendly Link</a></li>
         <li>|</li>
-        <li><a href="sitemap.asp">Sitemap</a></li>
+        <li><a href="sitemap.html">Sitemap</a></li>
     </ul>
     <ul class="HotFriendlink">
         <li class="hotweb1"><a target="_blank" href="http://www.desmond.com/">Support By Desmond</a></li>
