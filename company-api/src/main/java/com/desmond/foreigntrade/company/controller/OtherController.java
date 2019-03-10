@@ -40,4 +40,13 @@ public class OtherController extends BaseController {
 
         return "redirect:index.html";
     }
+
+    public static void main(String[] args) {
+        Thread t = new Thread(() -> {
+            System.out.println("");
+        });
+
+        t.start();
+        t.start();
+    }
 }

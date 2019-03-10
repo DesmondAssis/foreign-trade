@@ -1,7 +1,9 @@
 <#if page?? && (page.list?size > 0) >
     <#list page.list as prod>
     <div class="bk_pro">
-        <input name="pSelected" value="${prod.id}" type="checkbox">
+        <#if !dropCheckBox??>
+            <input name="pSelected" value="${prod.id}" type="checkbox">
+        </#if>
         <div class="imageDiv">
             <a class="bg-pic" href="product_detail.html?id=${prod.id}&pcatId=${prod.categoryId}">
                 <img src="${prod.url}" title=""

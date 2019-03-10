@@ -3,8 +3,11 @@ package com.desmond.foreigntrade.company.controller;
 import com.desmond.foreigntrade.config.SConfig;
 import com.desmond.foreigntrade.entity.Category;
 import com.desmond.foreigntrade.service.CategoryService;
+import com.desmond.foreigntrade.service.ProductService;
 import com.desmond.foreigntrade.vo.CategoryVO;
 import com.desmond.foreigntrade.vo.NavVO;
+import com.desmond.foreigntrade.vo.ProductVO;
+import com.github.pagehelper.PageInfo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.math.NumberUtils;
@@ -30,11 +33,20 @@ public class BaseController {
     @Autowired
     private SConfig sConfig;
 
+    @Autowired
+    private ProductService productService;
+
     public void processBasic(Model model) {
         model.addAttribute("contextPath", sConfig.getCompanyDomain());
 
         this.setNavs(model);
         this.setLeftNavigators(model);
+    }
+
+    public void setHotProducts(Model model) {
+        PageInfo<ProductVO> list = productService.listByCategory(2, 1, null, 0, 0, 1, 4);
+        model.addAttribute("page", list);
+        model.addAttribute("dropCheckBox", true);
     }
 
     public void setNavs(Model model) {

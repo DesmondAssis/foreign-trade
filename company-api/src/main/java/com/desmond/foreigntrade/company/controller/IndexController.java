@@ -30,14 +30,18 @@ public class IndexController extends BaseController {
 
     @GetMapping("/index.html")
     public String index(Model model) {
-        super.processBasic(model);
-
-        return "index";
+        return processIndex(model);
     }
 
     @GetMapping("/")
     public String indexRedirct(Model model) {
+        return processIndex(model);
+    }
+
+    private String processIndex(Model model) {
         super.processBasic(model);
+
+        setHotProducts(model);
 
         return "index";
     }

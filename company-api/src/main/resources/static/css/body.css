@@ -1,6 +1,6 @@
 /*----------------------------------------layout----------------------------------------*/
 
-.container { width:1004px; margin:0 auto; }
+.container { width:1004px; margin:0 auto; background-color: skyblue}
 
 /*---------------------------------------header-----------------------------------------*/
 
@@ -54,7 +54,7 @@
 /*---1th menu---*/
 #navmenu{ text-align:left; padding-left:185px; height:30px; }
 #navmenu li{ display:inline-block; position:relative; *display:inline; *zoom:1; }
-#navmenu li a{ display:block; line-height:30px; padding:0 20px; color:#2e80ba; font-size:14px; font-weight:bold; *display:inline-block; }
+#navmenu li a{ display:block; line-height:30px; padding:0 20px; color:black; font-size:14px; font-weight:bold; *display:inline-block; }
 
 #navmenu li a:hover{background:url(images/menu_li.png) no-repeat center bottom; color:#000; text-decoration:none; }
 #navmenu li.hover a{background:url(images/menu_li.png) no-repeat center bottom;}
@@ -84,14 +84,14 @@
 .category .u1{}
 .category .u1 li{ position:relative; z-index:1;}
 .category .u1 li.hover{ z-index:100;}
-.category .u1 li a{background:url(images/cate_a.png) no-repeat 25px 12px; margin:3px 0 0 4px; border:1px solid #fff; color:#fff; font-weight:bold; width:151px; overflow:hidden;display:block; padding-left:40px; line-height:30px; z-index:10000; position:relative;}
+.category .u1 li a{background:url(images/cate_a.png) no-repeat 25px 12px; margin:3px 0 0 4px; border:1px solid black; color:black; font-weight:bold; width:151px; overflow:hidden;display:block; padding-left:40px; line-height:30px; z-index:10000; position:relative;}
 .category .u1 li:hover a,.category .u1 li.hover a{ text-decoration:none; background:url(images/cate_hover.png) no-repeat 25px 12px; color:#ff8a00; display:block;}
 .category .u1 li.hover li a{ background:none;}
 
 
 .category .u2{ display:none; position:absolute; border-top:1px solid #909090; z-index:9999; left:200px;top:4px;width:189px; background:#aeaeae; border:1px solid #96bfdc;}
 .category .u2 li{}
-.category .u2 li a{background:url(images/cate_a.png) no-repeat 10px 9px !important; color:#fff !important; font-weight:bold; padding-left:25px; line-height:25px;}
+.category .u2 li a{background:url(images/cate_a.png) no-repeat 10px 9px !important; color:black !important; font-weight:bold; padding-left:25px; line-height:25px;}
 .category .u1 li:hover .u2 li a,.category .u1 li.hover .u2 li a {background:none;}
 
 .category .u2 li a:hover{ background:url(images/cate_hover.png) no-repeat 10px 9px !important;color:#ff8a00 !important;}

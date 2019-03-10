@@ -9,7 +9,7 @@
 
 /*-------------------------------------------------global--------------------------------------------------*/
 
-body{ font: 12px/1.5 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;background:url(images/body.png) no-repeat center top;  }
+body{ font: 12px/1.5 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif; background-color: aliceblue}
 a:link,a:visited{ color: #000; }
 a:hover{ color: #000;}
 
@@ -35,10 +35,10 @@ h3{ line-height:24px; text-align:center; font-size:18px; font-weight:700; margin
 .subs{ margin:20px 0 10px 0; overflow:hidden; _width:100%;}
 .subs_title{background:url(images/sub_title.png) no-repeat left top; height:35px;}
 .subs_title h2{ display:none;}
-.subs .intro{ text-align:left; padding-left:15px; line-height:25px; color:#fff; }
+.subs .intro{ text-align:left; padding-left:15px; line-height:25px; color:black; }
 .subs form{ }
 .subs form div{ margin:5px auto; float:left; width:100%;}
-.subs label{ float:left; width:60px; padding-left:15px; color:#fff; }
+.subs label{ float:left; width:60px; padding-left:15px; color:black; }
 .subs input{ width:113px; height:16px; line-height:16px;  margin-right:10px; float:right; border:1px solid #5eb7d9;}
 .subs .button{ width:71px; background:url(images/submit.png) no-repeat left top; border:0; height:22px; cursor:pointer; margin:5px 10px 10px; float:right; }
 
@@ -217,7 +217,7 @@ form .select .button input { border:0; cursor:pointer; background:url(images/but
 .feedback{ width:98%; padding:5px; margin:0 auto; border:none;}
 .feedback label{display:block; padding:5px;}
 .feedback .fTitle{font-style:italic;}
-.feedback .leftWord{float:left; font-weight:bold; width:15%; text-align:right; padding-right:5px;padding-top:5px;border:1px solid #96bfdc; color:#fff;}
+.feedback .leftWord{float:left; width:15%; text-align:right; padding-right:5px;padding-top:5px;border:1px solid #96bfdc; color:black;}
 .feedback .one{ height:24px;}
 .feedback .two{ height:22px;*height:24px;}
 .feedback .three{ height:38px;*height:40px;}
@@ -228,7 +228,7 @@ form .select .button input { border:0; cursor:pointer; background:url(images/but
 .feedback form *{ float:none;}
 .feedback .cn{font-size:1px; height:1px; clear:both; line-height:1px;}
 .feedback table{width:100%;float:left;}
-.feedback table th{text-align:right;width:15%;padding-right:5px;padding-top:5px;height:28px; border:1px solid #96bfdc;font-weight:bold; color:#fff;   }
+.feedback table th{text-align:right;width:15%;padding-right:5px;padding-top:5px;height:28px; border:1px solid #96bfdc; color:black;   }
 .feedback table td{text-align:left;vertical-align:top;  width:70%; height:23px;  border:1px solid #96bfdc;padding:5px;}
 .feedback table input,.feedback table select{ background:none; border:1px solid #96bfdc;}
 .feedback .notice{ padding-left:5px; height:30px; }
@@ -236,7 +236,7 @@ form .select .button input { border:0; cursor:pointer; background:url(images/but
 .feedback .limit{display:inline;margin-left:10px;}
 .feedback .limitm{display:inline;margin-left:2px;}
 .feedback .limit_add{ margin-top:5px;}
-.feedback .remark{color:#fff;margin-left:2px;}
+.feedback .remark{color:black;margin-left:2px;}
 /*------other element-------*/
 .feedback span{ color:red;}
 .feedback .input{ border:1px solid #96bfdc;}

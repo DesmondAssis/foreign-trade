@@ -6,7 +6,7 @@ label.more a{ margin-right:10px;  }
 .main_top{ overflow:hidden; margin-top:10px;}
 /*-----------HotAboutUs-------------*/
 
-.HotAboutUs{ float:left; width:441px;background:url(images/about.png) no-repeat left top;}
+.HotAboutUs{ float:left;}
 .HotAboutUs .title{background:url(images/about_title.png) no-repeat left top; height:35px;}
 .HotAboutUs .title h2{ display:none;}
 .HotAboutUs .detail{  padding:10px; text-align:justify; text-justify:distribute; line-height:21px; overflow:hidden; height:125px; }

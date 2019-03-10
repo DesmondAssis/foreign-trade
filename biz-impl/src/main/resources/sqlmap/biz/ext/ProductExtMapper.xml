@@ -35,11 +35,11 @@
     </if>
 
     <if test="order == 1">
-      order by hot_flag desc, category_id desc, update_time desc
+      order by hot_flag desc, category_id desc, create_time desc
     </if>
 
     <if test="order == 2">
-      order by update_time desc
+      order by create_time desc
     </if>
 
   </select>

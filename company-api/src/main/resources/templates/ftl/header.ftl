@@ -18,12 +18,6 @@
             </div>
         </div>
 
-        <h1 class="logo2">
-            <a href="index.html">
-                <img src="css/images/logo2.jpg" alt="" />
-            </a>
-        </h1>
-
     </div>
     <div class="bottom">
 
