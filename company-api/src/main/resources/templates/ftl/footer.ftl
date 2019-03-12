@@ -20,8 +20,8 @@
     </div>
 
     <ul class="copyright">
-        <li>Tel: 86-135-24829402</li>
-        <li>Copyright &copy; 2018 <a href="index.html">Prebooming Enterprises Pte Ltd</a> All Right Reserved</li>
+        <li>Tel: 86-130-24178846</li>
+        <li>Copyright &copy; 2008-2019 <a href="index.html">Prebooming</a> All Right Reserved</li>
         <li><a href="index.html">Friendly Link</a></li>
         <li>|</li>
         <li><a href="sitemap.html">Sitemap</a></li>

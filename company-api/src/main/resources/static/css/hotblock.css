@@ -7,7 +7,7 @@ label.more a{ margin-right:10px;  }
 /*-----------HotAboutUs-------------*/
 
 .HotAboutUs{ float:left;}
-.HotAboutUs .title{background:url(images/about_title.png) no-repeat left top; height:35px;}
+/*.HotAboutUs .title{background:url(images/our-products.jpg) no-repeat left top; height:35px;}*/
 .HotAboutUs .title h2{ display:none;}
 .HotAboutUs .detail{  padding:10px; text-align:justify; text-justify:distribute; line-height:21px; overflow:hidden; height:125px; }
 .HotAboutUs label{ float:left; padding:10px;background:url(images/more.png) no-repeat 10px center; width:65px; }

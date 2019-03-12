@@ -25,9 +25,9 @@
 
             <ul id='navmenu' class='menu'>
                 <li id='mli1'><a href='index.html' ><span>Home</span></a></li>
-                <li id='mli2'><a href='aboutus.html' ><span>About Us</span></a></li>
                 <li id='mli3'><a href='product.html' rel="no follow"><span>Products</span></a></li>
                 <li id='mli6'><a href='feedback.html' rel="no follow"><span>Feedback</span></a></li>
+                <li id='mli2'><a href='aboutus.html' ><span>About Us</span></a></li>
                 <li id='mli7'><a href='contactus.html' ><span>Contact Us</span></a></li>
             </ul>
             <!--[if gte IE 5.5]>
