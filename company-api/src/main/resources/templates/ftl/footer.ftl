@@ -1,5 +1,5 @@
 <div class="footer">
-    <div class="HotContact">
+    <#--<div class="HotContact">
         <ul>
             <li><strong>Address: </strong>RM 704 Hongjia Mansion, 388 Fushan Road, Shanghai, China,200122</li>
             <li><strong>Contact Person: </strong>Sales</li>
@@ -8,8 +8,8 @@
             <li><strong>Tel: </strong>86-21-50277708</li>
             <li><strong>Fax: </strong>86-21-50277707</li>
             <li><strong>E-Mail: </strong>
-                <a href="mailto:annie06121126@163.com">
-                    annie06121126@163.com
+                <a href="mailto:annie@prebooming.com">
+                    annie@prebooming.com
                 </a>
                 &nbsp;
                 <a href="mailto:">
@@ -17,7 +17,7 @@
                 </a>
             </li>
         </ul>
-    </div>
+    </div>-->
 
     <ul class="copyright">
         <li>Tel: 86-130-24178846</li>

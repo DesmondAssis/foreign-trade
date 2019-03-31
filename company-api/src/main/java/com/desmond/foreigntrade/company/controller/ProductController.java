@@ -16,6 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -51,9 +52,31 @@ public class ProductController extends BaseController {
 
         setSubCategories(pcatId, model);
 
+        setListHeader(list, model);
+
         super.processBasic(model);
 
         return "list";
+    }
+
+    private void setListHeader(PageInfo<ProductVO> list, Model model) {
+        if(list != null && !CollectionUtils.isEmpty(list.getList())) {
+            StringBuilder titleSb = new StringBuilder();
+            String cat = "cat";
+            for(ProductVO productVO : list.getList()) {
+                titleSb.append(productVO.getCode()).append(" ").append(productVO.getName()).append(",");
+                cat = productVO.getCategoryName();
+            }
+
+            model.addAttribute("title", titleSb);
+            model.addAttribute("summary", cat + ":" + titleSb);
+
+        } else {
+            model.addAttribute("title", "snorkeling ,diving ,surfing and swimming products");
+            model.addAttribute("summary", "PREBOOMING is one of the most professional water sports goods like the snorkeling ,diving ,surfing and swimming products manufacturer in China. We design, produce and sell full face snorkeling masks, snorkeling fins, diving wetsuit, diving mask&fin&snorkel, neoprene gloves, neoprene boots, sup, surfboard leash, rash guard, swimming goggles and swimming caps.\n" +
+                    "\n" +
+                    "Nowadays, PREBOOMING has customers in USA, Europe, South America, Australia, New Zealand ,Canada,etc. We could do OEM and ODM service for you. Olny you have any requirements,please let us know and feel free to contact us. Thank you.");
+        }
     }
 
     @GetMapping("/product_detail.html")
@@ -72,6 +95,9 @@ public class ProductController extends BaseController {
 
         PageInfo<ProductVO> list = productService.listByCategory(2, -1, null, 0, product.getCategoryId(), 1, 8);
         model.addAttribute("page", list);
+
+        model.addAttribute("title", dto.getCode() + " " + dto.getName());
+        model.addAttribute("summary", "");
 
         super.processBasic(model);
 
